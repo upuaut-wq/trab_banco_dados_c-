@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1639534069 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/controllerFile.cpp
+	"controllerFile.h"
+
+1639530351 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/controllerFile.h
+	<iostream>
+	<fstream>
+	"modelaluno.h"
+
+1639580144 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/main.cpp
+	<iostream>
+	"viewAluno.h"
+
+1639533610 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/modelaluno.h
+	<iostream>
+
+1639534002 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/modelaluno.cpp
+	"modelaluno.h"
+
+1639708774 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/modelAluno.cpp
+	"modelAluno.h"
+
+1639709135 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/modelAluno.h
+	<iostream>
+	<cstring>
+
+1639709832 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/controllerAluno.cpp
+	"controllerAluno.h"
+
+1639709641 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/controllerAluno.h
+	<iostream>
+	<fstream>
+	"modelAluno.h"
+	"modelHead.h"
+
+1639709675 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/viewAluno.h
+	<iostream>
+	"modelAluno.h"
+	"controllerAluno.h"
+
+1639682428 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/modelHead.h
+	<iostream>
+	<fstream>
+
+1639579348 /home/user/MEGAsync/Banco de Dados/Trab2/proj2/controllerHead.h
+	<iostream>
+	<fstream>
+	"modelHead.h"
+
+1639685158 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/modelHead.cpp
+	"modelHead.h"
+
+1639709854 source:/home/user/MEGAsync/Banco de Dados/Trab2/proj2/viewAluno.cpp
+	"viewAluno.h"
+
