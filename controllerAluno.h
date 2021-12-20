@@ -14,6 +14,8 @@ public:
     controllerAluno();
     void insert_aluno(modelAluno model);
     void write_head();
+    int imprime(std::string str1, std::string std2);
+    std::string deleta_aluno(std::string cpf);
     modelAluno convert_string_model(std::string str_line);
     std::string busca_aluno(std::string cpf);
     std::string convert_model_string(modelAluno md);

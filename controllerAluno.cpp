@@ -44,13 +44,13 @@ void controllerAluno::insert_aluno(modelAluno model){
         mh.qt_t++;
         file_aluno.close();
     }
-
     this->write_head();
     //Grava aluno
 
 
 
 }
+
 
 
 
@@ -62,13 +62,64 @@ std::string controllerAluno::busca_aluno(std::string cpf){
         std::string line;
         while(getline(file_aluno,line)){
             modelAluno md = convert_string_model(line);
-            if(md.cpf.compare(cpf) ==  true && md.free == 1){
+            //imprime(md.cpf,cpf);
+            if(md.cpf.compare(cpf) == true && md.free == 1){
+                file_aluno.close();
                 return line;
             }
             i++;
         }
         file_aluno.close();
-        return nullptr;
+        return "";
+}
+
+
+int controllerAluno::imprime(std::string str1, std::string str2){
+    int i = 0;
+    int t1 = str1.length();
+    int t2 = str2.length();
+
+    for(int i = 0 ; i < t1 ;i++){
+        std::cout << str1[i];
+    }
+
+    std::cout << "\n";
+
+    for(int i = 0 ; i < t2 ;i++){
+        std::cout << str2[i];
+    }
+    return 1;
+
+}
+
+
+
+std::string controllerAluno::deleta_aluno(std::string cpf){
+    this->read_head();
+    string ret = "";
+    this->file_aluno.open("aluno.txt",std::ios::in);
+    std::string buffer = "";
+    int i = 0;
+        std::string line;
+        while(getline(file_aluno,line)){
+            modelAluno md = convert_string_model(line);
+            if(md.cpf.compare((std::string)cpf) == true && md.free == 1){
+                line[line.length()-1] = '0';
+                buffer += line + '\n';
+                mh.fr_pos[mh.qt_fr] = i;
+                mh.qt_fr++;
+                ret += line;
+                write_head();
+            }else{
+                buffer += line + '\n';
+            }
+            i++;
+        }
+        file_aluno.close();
+        this->file_aluno.open("aluno.txt",std::ios::out);
+        file_aluno << buffer;
+        file_aluno.close();
+        return ret;
 }
 
 void controllerAluno::read_head(){

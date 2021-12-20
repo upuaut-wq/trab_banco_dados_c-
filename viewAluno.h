@@ -11,7 +11,7 @@ class viewAluno
         viewAluno();
         modelAluno insert_aluno();
         std::string busca_aluno();
-        void delete_aluno();
+        std::string delete_aluno();
         void menu();
         virtual ~viewAluno();
 

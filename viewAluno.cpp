@@ -14,8 +14,6 @@ std::string viewAluno::busca_aluno(){
     modelAluno md;
     std::cout << "cpf:";
     getline(std::cin,tmp);
-
-
     return tmp;
 
 }
@@ -58,8 +56,18 @@ modelAluno viewAluno::insert_aluno(){
 
 }
 
-void viewAluno::delete_aluno(){
+std::string viewAluno::delete_aluno(){
     std::cout << "Delete Aluno" << std::endl;
+      system("clear");
+    std::string tmp;
+    std::cin.ignore();
+    std::cout << "Deleta aluno:" << std::endl;
+    std::cout << "cpf:";
+    getline(std::cin,tmp);
+
+
+    return tmp;
+
 }
 
 
@@ -68,6 +76,7 @@ void viewAluno::menu(){
     bool op = true;
     int menu_select = -1;
     while(op != false){
+        system("clear");
         std::cout << "Menu" << std::endl;
         std::cout << " 1-> Inserir Aluno" << std::endl;
         std::cout << " 2-> Buscar Aluno" << std::endl;
@@ -87,14 +96,38 @@ void viewAluno::menu(){
 
         if(menu_select == 2){
             //Executa Busca
-            std::string str_b= busca_aluno();
+            std::string str_b = busca_aluno();
             controllerAluno cont_aluno;
-            std::cout << cont_aluno.busca_aluno(str_b) << std::endl;
+            std::string ret = "";
+            ret += cont_aluno.busca_aluno(str_b);
+            system("clear");
+            if(ret.length() > 0){
+                std::cout << "Aluno:" << cont_aluno.busca_aluno(str_b) << std::endl;
+            }else{
+                std::cout << "Aluno não encontrado..." << std::endl;
+            }
+            std::cout << "Enter para continuar..." << std::endl;
+            std::cin.ignore();
+            std::cin;
+
         }
 
 
         if(menu_select == 3){
-            //Executa insert
+            //Deleta
+            std::string str_b= delete_aluno();
+            controllerAluno cont_aluno;
+            std::string ret = cont_aluno.deleta_aluno(str_b);
+            system("clear");
+            if(ret.length() > 1){
+                    std::cout << "Aluno:" << ret << std::endl;
+                    std::cout << "Aluno excluido com sucesso..." << std::endl;
+            }else{
+                    std::cout << "Aluno nao encontrado..." << std::endl;
+            }
+            std::cout << "Enter para continuar..." << std::endl;
+            std::cin.ignore();
+            std::cin;
         }
 
 
